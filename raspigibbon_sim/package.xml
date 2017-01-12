@@ -12,7 +12,7 @@
   <url type="website">http://github.com/raspigibbon_sim/wiki</url>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>raspigibbon_sim</run_depend>
+  <run_depend>raspigibbon_ros</run_depend>
   <run_depend>raspigibbon_description</run_depend>
 
   <export>
