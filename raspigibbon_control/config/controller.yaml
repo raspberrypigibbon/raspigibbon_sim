@@ -1,33 +1,31 @@
-raspigibbon:
-  # Publish all joint states
-  joint_state_controller:
-    type: joint_state_controller/JointStateController
-    publish_rate: 50
+# Publish all joint states
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
 
-  # Controllers 
+# Controllers 
 
-  joint_1_position_controller:
-    type: position_controllers/JointPositionController
-    joint: joint1
+joint_1_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint1
 
-  joint_2_position_controller:
-    type: position_controllers/JointPositionController
-    joint: joint2
+joint_2_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint2
 
-  joint_3_position_controller:
-    type: position_controllers/JointPositionController
-    joint: joint3
+joint_3_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint3
 
-  joint_4_position_controller:
-    type: position_controllers/JointPositionController
-    joint: joint4
+joint_4_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint4
 
-  joint_5_position_controller:
-    type: position_controllers/JointPositionController
-    joint: joint5
+joint_5_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint5
 
-  joint_6_position_controller:
-    type: position_controllers/JointPositionController
-    joint: joint6
-
+joint_6_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint6
 
