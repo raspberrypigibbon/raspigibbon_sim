@@ -31,6 +31,7 @@
 
     <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model raspigibbon -param robot_description"/>
+    <node name="raspberrypigibbon_gazebo_joint_subscriber" pkg="raspigibbon_control" type="raspberrypigibbon_gazebo_joint_subscriber.py"/>
 
     <!-- ros_control motoman launch file -->
     <include file="$(find raspigibbon_control)/launch/raspigibbon_control.launch"/>
