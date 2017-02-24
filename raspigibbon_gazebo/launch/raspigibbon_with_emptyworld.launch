@@ -1,5 +1,13 @@
 <?xml version="1.0"?>
 <launch>
+  <remap from="/raspigibbon/joint_states" to="/raspigibbon_on_gazebo/joint_states"/>
+  <remap from="/raspigibbon/joint_1_position_controller/command" to="/raspigibbon_on_gazebo/joint_1_position_controller/command"/>
+  <remap from="/raspigibbon/joint_2_position_controller/command" to="/raspigibbon_on_gazebo/joint_2_position_controller/command"/>
+  <remap from="/raspigibbon/joint_3_position_controller/command" to="/raspigibbon_on_gazebo/joint_3_position_controller/command"/>
+  <remap from="/raspigibbon/joint_4_position_controller/command" to="/raspigibbon_on_gazebo/joint_4_position_controller/command"/>
+  <remap from="/raspigibbon/joint_5_position_controller/command" to="/raspigibbon_on_gazebo/joint_5_position_controller/command"/>
+  <remap from="/raspigibbon/joint_6_position_controller/command" to="/raspigibbon_on_gazebo/joint_6_position_controller/command"/>
+
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="model" default="$(find raspigibbon_description)/urdf/raspigibbon.urdf"/>
   <arg name="paused" default="false"/>
@@ -17,14 +25,14 @@
     <arg name="headless" value="$(arg headless)"/>
   </include>
 
-  <!-- <include file="$(find raspimouse_control)/launch/raspimouse_ros_install.launch"/> -->
+  <group ns="raspigibbon">
+    <!-- Load the URDF into the ROS Parameter Server -->
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)'"/>
 
-  <!-- Load the URDF into the ROS Parameter Server -->
-  <param name="raspigibbon/robot_description" command="$(find xacro)/xacro.py '$(arg model)'" />
-  
-  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model raspigibbon -param raspigibbon/robot_description"/>
+    <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model raspigibbon -param robot_description"/>
 
-  <!-- ros_control motoman launch file -->
-  <include file="$(find raspigibbon_control)/launch/raspigibbon_control.launch"/>
+    <!-- ros_control motoman launch file -->
+    <include file="$(find raspigibbon_control)/launch/raspigibbon_control.launch"/>
+  </group>
 </launch>
