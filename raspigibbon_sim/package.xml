@@ -4,18 +4,21 @@
   <version>0.1.0</version>
   <description>The raspigibbon_sim package</description>
 
-  <maintainer email="tiryoh@gmail.com">Daisuke Sato</maintainer>
+  <maintainer email="shop@rt-net.jp">RT Corporation</maintainer>
+
+  <license>MIT</license>
+
+  <url type="website">http://github.com/rt-net/RaspberryPiGibbon/wiki</url>
+  <url type="repository">https://github.com/raspberrypigibbon/raspigibbon_sim</url>
+  <url type="bugtracker">https://github.com/raspberrypigibbon/raspigibbon_sim/issues</url>
 
   <author email="tiryoh@gmail.com">Daisuke Sato</author>
   <author email="brast351-github@yahoo.co.jp">Shota Hirama</author>
 
-  <license>MIT</license>
-
-  <url type="website">http://github.com/raspberrypigibbon/raspigibbon_sim/wiki</url>
-
   <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>raspigibbon_control</run_depend>
+  <run_depend>raspigibbon_gazebo</run_depend>
   <run_depend>raspigibbon_ros</run_depend>
-  <run_depend>raspigibbon_description</run_depend>
 
   <export>
     <metapackage />

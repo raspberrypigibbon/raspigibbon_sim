@@ -17,7 +17,5 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher"
     type="robot_state_publisher"
     respawn="false" output="screen" />
-  <!-- convert sensor values -->
-  <!-- <node name="lightsensors" pkg="raspimouse_control" type="sensor_led_converter.py" /> -->
 </launch>
 
