@@ -47,7 +47,6 @@
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>raspigibbon_control</run_depend>
   <run_depend>raspigibbon_description</run_depend>
-  <run_depend>raspigibbon_ros</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
